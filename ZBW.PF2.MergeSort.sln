@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZBW.PF2.MergeSort", "ZBW.PF2.MergeSort\ZBW.PF2.MergeSort.csproj", "{3620EC6F-50CC-4D02-8D89-249FC947A930}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3620EC6F-50CC-4D02-8D89-249FC947A930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3620EC6F-50CC-4D02-8D89-249FC947A930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3620EC6F-50CC-4D02-8D89-249FC947A930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3620EC6F-50CC-4D02-8D89-249FC947A930}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
