@@ -1,28 +1,29 @@
 int[] numbers = { 38, 27, 43, 3, 9, 82, 10 };
 
 Console.WriteLine("Vorher: " + string.Join(", ", numbers));
-MergeSort(numbers, 0, numbers.Length - 1);
-Console.WriteLine("Nachher:  " + string.Join(", ", numbers));
+int[] sorted = MergeSort(numbers);
+Console.WriteLine("Nachher:  " + string.Join(", ", sorted));
 
-static void MergeSort(int[] arr, int left, int right)
+static int[] MergeSort(int[] arr)
 {
-    if (left >= right) return;
+    if (arr.Length <= 1) return arr;
 
-    int mid = (left + right) / 2;
-    MergeSort(arr, left, mid);
-    MergeSort(arr, mid + 1, right);
-    Merge(arr, left, mid, right);
+    int mid = arr.Length / 2;
+    int[] left  = MergeSort(arr[..mid]);
+    int[] right = MergeSort(arr[mid..]);
+    return Merge(left, right);
 }
 
-static void Merge(int[] arr, int left, int mid, int right)
+static int[] Merge(int[] left, int[] right)
 {
-    int[] leftHalf  = arr[left..(mid + 1)];
-    int[] rightHalf = arr[(mid + 1)..(right + 1)];
+    int[] result = new int[left.Length + right.Length];
+    int i = 0, j = 0, k = 0;
 
-    int i = 0, j = 0, k = left;
-    while (i < leftHalf.Length && j < rightHalf.Length)
-        arr[k++] = leftHalf[i] <= rightHalf[j] ? leftHalf[i++] : rightHalf[j++];
+    while (i < left.Length && j < right.Length)
+        result[k++] = left[i] <= right[j] ? left[i++] : right[j++];
 
-    while (i < leftHalf.Length)  arr[k++] = leftHalf[i++];
-    while (j < rightHalf.Length) arr[k++] = rightHalf[j++];
+    while (i < left.Length)  result[k++] = left[i++];
+    while (j < right.Length) result[k++] = right[j++];
+
+    return result;
 }
